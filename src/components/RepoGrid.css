@@ -1,0 +1,46 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.count-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.count {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.count strong { color: var(--text-primary); font-weight: 500; }
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 64px 0;
+  color: var(--text-hint);
+  font-size: 13px;
+}
+.empty strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Skeleton loading */
+.card.skeleton {
+  height: 200px;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

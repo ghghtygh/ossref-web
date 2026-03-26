@@ -1,0 +1,44 @@
+.filters-section { margin-bottom: 28px; }
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.filter-row:last-child { margin-bottom: 0; }
+
+.filter-label {
+  font-size: 11px;
+  color: var(--text-hint);
+  font-family: var(--mono);
+  min-width: 72px;
+  letter-spacing: 0.04em;
+}
+
+.chip {
+  font-size: 12px;
+  font-family: var(--sans);
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 0.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  user-select: none;
+}
+.chip:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+.chip.active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--accent-text);
+}
+
+@media (max-width: 600px) {
+  .filter-label { min-width: 60px; }
+}
