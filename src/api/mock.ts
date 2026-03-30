@@ -1,6 +1,6 @@
 import { Repo, FilterState, PageResponse } from '../types';
 
-const API_BASE = process.env.REACT_APP_API_BASE_URL ?? 'http://localhost:8082/api';
+const API_BASE = process.env.REACT_APP_API_BASE_URL ?? '/api';
 
 export async function fetchRepos(filters: FilterState): Promise<Repo[]> {
   const params = new URLSearchParams();
