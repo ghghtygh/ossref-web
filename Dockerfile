@@ -4,6 +4,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
+ARG REACT_APP_FARO_COLLECTOR_URL=""
+ENV REACT_APP_FARO_COLLECTOR_URL=${REACT_APP_FARO_COLLECTOR_URL}
 RUN npm run build
 
 # ---- Production Stage ----
