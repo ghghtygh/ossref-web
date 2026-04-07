@@ -12,7 +12,14 @@ RUN npm run build
 
 # ---- Production Stage ----
 FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+RUN addgroup -g 1001 -S app && adduser -u 1001 -S app -G app && \
+    chown -R app:app /var/cache/nginx /var/log/nginx /etc/nginx/conf.d && \
+    touch /var/run/nginx.pid && chown app:app /var/run/nginx.pid
+
+COPY --from=build --chown=app:app /app/build /usr/share/nginx/html
+COPY --chown=app:app nginx.conf /etc/nginx/conf.d/default.conf
+
+USER app
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
