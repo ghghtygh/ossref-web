@@ -4,6 +4,7 @@ import Filters from './components/Filters';
 import RepoGrid from './components/RepoGrid';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
+import AdminFab from './components/admin/AdminFab';
 import { fetchRepos } from './api/mock';
 import { faro } from '@grafana/faro-web-sdk';
 import { Repo, FilterState } from './types';
@@ -44,6 +45,7 @@ function App() {
         </div>
         <RepoGrid repos={repos} loading={loading} />
         <Footer />
+        <AdminFab />
       </div>
     </ErrorBoundary>
   );

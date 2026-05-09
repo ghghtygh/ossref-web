@@ -1,0 +1,49 @@
+.admin-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 0.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: border-color 120ms, color 120ms, transform 120ms;
+}
+
+.admin-fab:hover {
+  border-color: var(--accent-border);
+  color: var(--accent-text);
+  transform: translateY(-1px);
+}
+
+.admin-fab__plus {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.admin-fab__label {
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .admin-fab {
+    bottom: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
