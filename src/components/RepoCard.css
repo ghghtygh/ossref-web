@@ -82,11 +82,12 @@
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.25s ease;
+  transition: max-height 0.4s ease, opacity 0.25s ease;
 }
 .card.expanded .tree-preview {
-  max-height: 260px;
+  max-height: 70vh;
   opacity: 1;
+  overflow-y: auto;
 }
 
 .tree-label {
@@ -104,6 +105,8 @@
   color: var(--text-secondary);
   line-height: 1.8;
   white-space: pre;
+  user-select: text;
+  cursor: text;
 }
 .tree .dir  { color: var(--text-primary); font-weight: 500; }
 .tree .muted { color: var(--text-hint); }
