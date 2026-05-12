@@ -96,10 +96,17 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, expanded, index, onToggle }) 
     : repo.tree;
   const tree = buildTree(trimmedPaths);
 
+  const handleCardClick = () => {
+    // 텍스트 드래그로 선택 중이면 토글하지 않는다 (트리 내용 복사 케이스)
+    const selection = window.getSelection();
+    if (selection && selection.toString().length > 0) return;
+    onToggle();
+  };
+
   return (
     <div
       className={`card ${expanded ? 'expanded' : ''}`}
-      onClick={onToggle}
+      onClick={handleCardClick}
       style={{ animationDelay: `${index * 40}ms` }}
     >
       <div className="card-top">
